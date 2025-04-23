@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Register - Online Book Exchange Platform{% endblock %}
+
+{% block content %}
+  <h1 class="text-center my-4 w3-serif" style="color:#005f73; text-decoration: underline;">Register</h1>
+  
+  <form method="POST" enctype="multipart/form-data" class="w-50 mx-auto bg-light" style="color:#005f73;">
+    {% csrf_token %}
+    {{ form | crispy }}
+    
+    <button type="submit" class="btn btn-primary w-100">Register</button>
+  </form>
+{% endblock %}

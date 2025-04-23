@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home {% endblock %}
+
+{% block content %}
+
+<h1 style="text-align: center; color:#1B263B;" class="w3-serif">Welcome to Online Book Exchange Platform</h1>
+<div>
+    <h1 style="color:#1B263B text-align:center" class="w3-serif">About Our website</h1>
+    <p>This is our online book exchange platform our platform provides you very flexible learning and you can find your desired book and read it exchange it we have preloved books we have new books and all kind of books Our website is a platform where you can exchange books with other users. You can add books to your wishlist and also see the books that other users have added to their wishlist. You can also see the books that are available for exchange.you can make request for books and you can also add books to your wishlist.
+    </p>
+    
+ </div> 
+<div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-indicators">
+        <button type="button" data-bs-target="#bookCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+        <button type="button" data-bs-target="#bookCarousel" data-bs-slide-to="1" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#bookCarousel" data-bs-slide-to="2" aria-label="Slide 2"></button>
+</div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/book2.jpg' %}" class="d-block w-100"  height=800px alt="Book 2">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/book1.jpg' %}" class="d-block w-100" height=800px alt="Book 1">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/book3.jpg' %}" class="d-block w-100" height=800px alt="Book 3">
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+</div>
+     <div class="row w3-padding-16" >
+        <div class="card col-md-3 mt-10">
+            <h2 style="text-decoration: underline" class="card-title w3-serif"> Books Exchange</h2>
+            <img src="{% static 'images/img1.jpg' %}" class="card-img image-fluid" alt="Book 4">
+            <p>Here you can see the books that are available for exchange. You can search for books by title, author, or genre. You can also filter books by genre.</p>
+        </div>
+        <div class=" card col-md-3">
+            <h2 style="text-decoration: underline" class="card-title w3-serif">My Wishlist</h2>
+            <img src="{% static 'images/img2.jpg' %}" class="card-img image-fluid" alt="Book 5">
+            <p>Here you can see the books that you have added to your wishlist. You can also see the books that other users have added to their wishlist. You can make a request for books that are available for exchange.
+            </p>
+        </div>
+       
+        <div class=" card col-md-3">
+            <h2 style="text-decoration: underline" class="w3-serif card-title">Filter & Search </h2>
+            <img src="{% static 'images/searchbook.jpg' %}" class="card-img image-fluid" alt="Book 6">
+            <p>Here you can filter books by genre and search for books by title, author, or genre. You can also see the books that are available for exchange. You can make a request for books that are available for exchange.Check exchange status of books.
+            </p>
+
+        </div>
+        <div class=" card col-md-3">
+            <h2 style="text-decoration: underline" class="card-title w3-serif">Review & FeedBack</h2>
+            <img src="{% static 'images/review.jpg' %}" class="card-img image-fluid" alt="Book 7">
+            <p class="card-text"> After succesfull book exchange you can write review and give feedback to the user. You can also see the reviews and feedbacks that other users have written. You can also see the books that are available for exchange. You can make a request for books that are available for exchange.</p>
+         </div>
+     </div>
+        
+    
+{% endblock %}

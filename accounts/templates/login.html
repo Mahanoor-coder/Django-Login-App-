@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - Online Book Exchange Platform{% endblock %}
+
+{% block content %}
+  <h1 class="text-center my-4 w3-serif" style="color:#005f73; text-decoration: underline;" >Login</h1>
+  
+  <form method="POST" class="w-50 mx-auto">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+      <label for="username" class="form-label" style="color:#005f73; text-decoration: underline;">Username:</label>
+      <input type="text" name="username" class="form-control" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="password" class="form-label" style="color:#005f73; text-decoration: underline;">Password:</label>
+      <input type="password" name="password" class="form-control" required>
+    </div>
+    
+    <button type="submit" class="btn btn-primary w-100">Login</button>
+  </form>
+{% endblock %}

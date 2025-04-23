@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Online Book Exchange Platform{% endblock %}
+
+{% block content %}
+  <h1 style="color:#005f73; text-decoration: underline;">Welcome {{ request.user.first_name }}</h1>
+
+  {% if request.user.profile_picture %}
+    <img src="{{ request.user.profile_picture.url }}" class="d-block w-25" alt="Profile Picture">
+  {% else %}
+    <p>No profile picture uploaded.</p>
+  {% endif %}
+{% endblock %}

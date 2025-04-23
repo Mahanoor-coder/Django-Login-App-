@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block title %}Admin Dashboard - Online Book
+Exchange Platform{% endblock %} {% block content %}
+<h1 style="color: #005f73" align="center">Admin Dashboard</h1>
+<h2 style="color: #005f73">Pending Approval Requests</h2>
+
+{% if pending_users %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in pending_users %}
+    <tr>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <form method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="user_id" value="{{ user.id }}" />
+          <button
+            type="submit"
+            name="action"
+            value="approve"
+            class="btn btn-success"
+          >
+            Approve
+          </button>
+          <button
+            type="submit"
+            name="action"
+            value="reject"
+            class="btn btn-danger"
+          >
+            Reject
+          </button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No pending approval requests.</p>
+{% endif %} {% endblock %}
